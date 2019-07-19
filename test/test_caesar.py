@@ -25,3 +25,9 @@ def test_decrypts_text_with_default_key():
     assert_that(translated).is_equal_to('A')
 
 
+def test_encrypt_ignore_unknown_characters():
+    message = '][}\\%$§'
+
+    translated = caesar(message)
+
+    assert_that(translated).is_equal_to(message)
